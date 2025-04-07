@@ -18,7 +18,7 @@ async def fetch_details(record_id: str):
         "formula": detail_data.get("compound", {}).get("formula", "No disponible"),
         "masa_exacta": detail_data.get("compound", {}).get("mass", "No disponible"),
         "imagen": detail_data.get("splash", "No disponible"),
-        "url": f"{BASE_URL_MASSBANK}/RecordDisplay?id={record_id}"
+        "url": f"https://massbank.eu/MassBank/RecordDisplay?id={record_id}"
     }
 
 async def search_compounds(params: dict):
