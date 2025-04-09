@@ -5,7 +5,7 @@ from models.response_models import SearchResponse
 router = APIRouter()
 
 @router.get("/search/", response_model=SearchResponse)
-async def search(
+def search(
     compound_name: str = Query(None, description="Nombre del compuesto"),
     exact_mass: str = Query(None, description="Masa exacta"),
     mass_tolerance: float = Query(0.01, description="Tolerancia de masa"),
@@ -20,4 +20,4 @@ async def search(
     if formula:
         params["formula"] = formula
 
-    return await search_compounds(params)
+    return search_compounds(params)
